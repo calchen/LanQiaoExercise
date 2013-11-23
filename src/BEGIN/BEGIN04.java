@@ -30,12 +30,7 @@ package BEGIN;
 import java.util.Scanner;
 
 public class BEGIN04 {
-
-	/**
-	 * @param args
-	 */
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		// 输入
 		Scanner sc = new Scanner(System.in);
 		int n = sc.nextInt();
