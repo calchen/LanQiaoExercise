@@ -18,26 +18,27 @@
 	
 ----------
 系统评分：100
-CPU使用：93ms
-内存使用：33.90MB
+CPU使用：140ms
+内存使用：34.26MB
 
  */
 package BASIC;
 
+import java.util.Arrays;
 import java.util.Scanner;
-import java.util.TreeSet;
 
 public class BASIC13 {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		int n = sc.nextInt();
-		TreeSet<Integer> treeSet = new TreeSet<Integer>();
+		int[] arr = new int[n];
+		for(int i =0;i < n;i++) {
+			arr[i] = sc.nextInt();
+		}
+		Arrays.sort(arr);
 		for(int i = 0;i < n;i++) {
-			treeSet.add(sc.nextInt());
+			System.out.print(arr[i] + " ");
 		}
-		for(int i = 0;i < n-1;i++) {
-			System.out.print(treeSet.pollFirst() + " ");
-		}
-		System.out.println(treeSet.pollFirst());
+		
 	}
 }

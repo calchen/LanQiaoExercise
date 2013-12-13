@@ -34,8 +34,25 @@ CPU使用：93ms
  */
 package BASIC;
 
+import java.util.Scanner;
+
 public class BASIC12 {
 	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();
+		for(int i = 0;i < n;i++) {
+			String str = sc.nextLine().toUpperCase();
+			char[] c = str.toCharArray();
+			String binary = "";
+			
+			for (int j = 0;i < c.length; j--) {
+				if(c[j]>='A') {
+					c[j] = (char) (c[j]-'A' + '9'+1);
+				}
+				int a = c[i]-'0';
+				
+			}
+		}
 
 	}
 }

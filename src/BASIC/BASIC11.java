@@ -11,8 +11,8 @@
 	
 ----------
 系统评分：100
-CPU使用：93ms
-内存使用：33.90MB
+CPU使用：125ms
+内存使用：34.23MB
 
  */
 package BASIC;
@@ -22,7 +22,18 @@ import java.util.Scanner;
 public class BASIC11 {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		String str = sc.nextLine();
+		String str = sc.nextLine().toUpperCase();
 		
+		char[] c = str.toCharArray();
+		long result = 0, n = 1;
+		for (int i = c.length - 1; i >= 0; i--) {
+			if(c[i]>='A') {
+				c[i] = (char) (c[i]-'A' + '9'+1);
+			}
+			int a = c[i]-'0';
+			result += a * n;
+			n *= 16;
+		}
+		System.out.println(result);
 	}
 }

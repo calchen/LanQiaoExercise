@@ -38,7 +38,7 @@ public class BEGIN03 {
 		int r = sc.nextInt();
 		double PI = 3.14159265358979323;
 		double area = r * r * PI;
-		// 将area四舍五入并不用科学技术法输出
+		// 将area四舍五入并不用科学计数法输出
 		DecimalFormat decimalFormat = new DecimalFormat("#.0000000");
 		System.out.println(decimalFormat.format(area));
 	}

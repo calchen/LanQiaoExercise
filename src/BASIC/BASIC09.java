@@ -21,14 +21,36 @@
 	
 ----------
 系统评分：100
-CPU使用：93ms
-内存使用：33.90MB
+CPU使用：140ms
+内存使用：34.27MB
 
  */
 package BASIC;
 
+import java.util.Scanner;
+
 public class BASIC09 {
 	public static void main(String[] args) {
-		
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();
+
+		for (int a = 1; a <= 9; a++) {
+			for (int b = 0; b <= 9; b++) {
+				for (int c = 0; c <= 9; c++) {
+					if (n == a * 2 + b * 2 + c) {
+						System.out.println("" + a + b + c + b + a);
+					}
+				}
+			}
+		}
+		for (int a = 1; a <= 9; a++) {
+			for (int b = 0; b <= 9; b++) {
+				for (int c = 0; c <= 9; c++) {
+					if (n == a * 2 + b * 2 + c * 2) {
+						System.out.println("" + a + b + c + c + b + a);
+					}
+				}
+			}
+		}
 	}
 }
