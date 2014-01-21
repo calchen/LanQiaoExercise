@@ -6,11 +6,11 @@
 -   蓝桥杯官网的练习系统试题以及答案，会逐步完善。
 -   包名依照训练集名称命名，同时与试题编辑号的开头相同。可以依照试题编号寻找题目及答案。
 -   本项目使用Java语言编写。在练习系统上提交时请将主类改为Main，不要将package也提交，import是要提交的，建议将注释删除。
--   编写环境：Ubuntu 12.04 LTS 32-bit，JDK 1.7.0_45，Eclipse  Kepler Service Release 1
+-   编写环境：Windows 7 64bit，JDK 1.7.0_45，Eclipse Kepler Service Release 1
 
 版本
 --
-0.1
+1.0
 
 
 申明
