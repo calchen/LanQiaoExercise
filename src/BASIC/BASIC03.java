@@ -26,11 +26,95 @@
 
 数据规模与约定
 	1 <= n, m <= 26。
-	
+
 ----------
 系统评分：100
-CPU使用：93ms
-内存使用：33.90MB
+CPU使用：140ms
+内存使用：34.24MB
+
+ */
+/*
+由于这题比较奇葩，因此提供部分样例。来源：http://blog.csdn.net/chao1983210400/article/details/17419877
+5 7
+ABCDEFG
+BABCDEF
+CBABCDE
+DCBABCD
+EDCBABC
+
+4 6
+ABCDEF
+BABCDE
+CBABCD
+DCBABC
+
+1 1
+A
+
+1 2
+AB
+
+2 1
+A
+B
+
+1 14
+ABCDEFGHIJKLMN
+
+13 5
+ABCDE
+BABCD
+CBABC
+DCBAB
+EDCBA
+FEDCB
+GFEDC
+HGFED
+IHGFE
+JIHGF
+KJIHG
+LKJIH
+MLKJI
+
+10 10
+ABCDEFGHIJ
+BABCDEFGHI
+CBABCDEFGH
+DCBABCDEFG
+EDCBABCDEF
+FEDCBABCDE
+GFEDCBABCD
+HGFEDCBABC
+IHGFEDCBAB
+JIHGFEDCBA
+
+26 26
+ABCDEFGHIJKLMNOPQRSTUVWXYZ
+BABCDEFGHIJKLMNOPQRSTUVWXY
+CBABCDEFGHIJKLMNOPQRSTUVWX
+DCBABCDEFGHIJKLMNOPQRSTUVW
+EDCBABCDEFGHIJKLMNOPQRSTUV
+FEDCBABCDEFGHIJKLMNOPQRSTU
+GFEDCBABCDEFGHIJKLMNOPQRST
+HGFEDCBABCDEFGHIJKLMNOPQRS
+IHGFEDCBABCDEFGHIJKLMNOPQR
+JIHGFEDCBABCDEFGHIJKLMNOPQ
+KJIHGFEDCBABCDEFGHIJKLMNOP
+LKJIHGFEDCBABCDEFGHIJKLMNO
+MLKJIHGFEDCBABCDEFGHIJKLMN
+NMLKJIHGFEDCBABCDEFGHIJKLM
+ONMLKJIHGFEDCBABCDEFGHIJKL
+PONMLKJIHGFEDCBABCDEFGHIJK
+QPONMLKJIHGFEDCBABCDEFGHIJ
+RQPONMLKJIHGFEDCBABCDEFGHI
+SRQPONMLKJIHGFEDCBABCDEFGH
+TSRQPONMLKJIHGFEDCBABCDEFG
+UTSRQPONMLKJIHGFEDCBABCDEF
+VUTSRQPONMLKJIHGFEDCBABCDE
+WVUTSRQPONMLKJIHGFEDCBABCD
+XWVUTSRQPONMLKJIHGFEDCBABC
+YXWVUTSRQPONMLKJIHGFEDCBAB
+ZYXWVUTSRQPONMLKJIHGFEDCBA
 
  */
 package BASIC;
@@ -43,37 +127,21 @@ public class BASIC03 {
 		int n = sc.nextInt();
 		int m = sc.nextInt();
 
-		int count = 0;
-		if(m != 1) {
-			for (int i = 0; i < n / m + 1; i++) {
-				for (int j = 0; j < m - 1 && count < n; j++,count++) {
-					String str = "";
-					for(int k = j;k >0;k--) {
-						str += (char)('A'+k);
-					}
-					str += 'A';
-					for(int k = 1;k < m-j;k++) {
-						str += (char)('A'+k);
-					}
-					System.out.println(str);
-				}
-				for (int j = 0; j < m - 1 && count < n; j++,count++) {
-					String str = "";
-					for(int k = m - j - 1;k < m-1;k++) {
-						str += (char)('A'+k);
-					}
-					str += (char)('A' + m-1);
-					for(int k = m-2;k > j-1 ;k--) {
-						str += (char)('A'+k);
-					}
-					System.out.println(str);
-				}
+		// 一行一行输出
+		for(int i = 0;i < n;i++) {
+			// 用于列计数
+			int y = 0;
+			//每行分成两部分输出
+			for(int j=i;j >= 0 && y < m;j--) {
+				System.out.print((char)('A'+j));
+				y++;
 			}
-		}else {
-			for(int i = 0;i < n;i++) {
-				System.out.println("A");
+			for(int j = 1; y < m;j++) {
+				System.out.print((char)('A'+j));
+				y++;
 			}
+			//换行
+			System.out.println();
 		}
 	}
-
 }
